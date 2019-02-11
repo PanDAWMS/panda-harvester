@@ -440,6 +440,7 @@ class PandaCommunicator(BaseCommunicator):
             except Exception:
                 core_utils.dump_error_message(tmp_log, tmp_res)
 
+        tmp_log.debug('done')
         return ret_val, ret_msg
 
     # get job statistics
@@ -460,6 +461,7 @@ class PandaCommunicator(BaseCommunicator):
                 ret_msg = 'Exception'
                 core_utils.dump_error_message(tmp_log)
 
+        tmp_log.debug('done with {0}'.format(ret_msg))
         return stats, ret_msg
 
     # update workers
