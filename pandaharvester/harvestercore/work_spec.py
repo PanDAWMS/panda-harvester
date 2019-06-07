@@ -261,7 +261,8 @@ class WorkSpec(SpecBase):
         if self.workAttributes is not None:
             for attr in ['stdOut',
                          'stdErr',
-                         'batchLog'
+                         'batchLog',
+                         'jdl'
                          ]:
                 if attr in self.workAttributes:
                     data[attr] = self.workAttributes[attr]
@@ -347,6 +348,8 @@ class WorkSpec(SpecBase):
             keyName = 'stdOut'
         elif log_type == 'stderr':
             keyName = 'stdErr'
+        elif log_type == 'jdl':
+            keyName = 'jdl'
         else:
             keyName = 'batchLog'
         if stream.startswith('http'):
